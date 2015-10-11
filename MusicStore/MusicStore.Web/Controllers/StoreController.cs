@@ -25,10 +25,12 @@ namespace MusicStore.Web.Controllers
         }
 
         // 
-        // GET: /Store/Details
-        public string Details()
+        // GET: /Store/Details/5
+        public string Details(int id)
         {
-            return "Hello from Store.Details()";
+            string message = "Store.Details, ID = " + id;
+
+            return message;
         }
 
 
