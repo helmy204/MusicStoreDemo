@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicStore.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,11 +27,11 @@ namespace MusicStore.Web.Controllers
 
         // 
         // GET: /Store/Details/5
-        public string Details(int id)
+        public ActionResult Details(int id)
         {
-            string message = "Store.Details, ID = " + id;
+            var album = new Album { Title = "Album " + id };
 
-            return message;
+            return View(album);
         }
 
 
