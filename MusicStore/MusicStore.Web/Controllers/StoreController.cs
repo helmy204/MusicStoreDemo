@@ -29,6 +29,7 @@ namespace MusicStore.Web.Controllers
         // GET: /Store/Details/5
         public ActionResult Details(int id)
         {
+            // Page 37
             var album = new Album { Title = "Album " + id };
 
             return View(album);
