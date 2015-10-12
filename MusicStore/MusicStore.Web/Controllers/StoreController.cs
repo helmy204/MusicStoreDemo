@@ -11,25 +11,31 @@ namespace MusicStore.Web.Controllers
     {
         //
         // GET: /Store/
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello from Store.Index()";
+            var genres = new List<Genre>
+            {
+                new Genre{Name="Disco"},
+                new Genre{Name="Jazz"},
+                new Genre{Name="Rock"}
+            };
+
+            return View(genres);
         }
 
         //
         // GET: /Store/Browse?genre=Disco
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+            var genreModel = new Genre { Name = genre };
 
-            return message;
+            return View(genreModel);
         }
 
         // 
         // GET: /Store/Details/5
         public ActionResult Details(int id)
         {
-            // Page 37
             var album = new Album { Title = "Album " + id };
 
             return View(album);
