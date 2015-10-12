@@ -9,8 +9,6 @@ namespace MusicStore.Web.Controllers
 {
     public class StoreController : Controller
     {
-        // page 55
-
         MusicStoreEntities storeDB = new MusicStoreEntities();
 
         //
