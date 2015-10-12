@@ -12,7 +12,7 @@ namespace MusicStore.Web.Controllers
 {
     public class StoreManagerController : Controller
     {
-        // page 77
+        // page 82
 
         private MusicStoreEntities db = new MusicStoreEntities();
 
