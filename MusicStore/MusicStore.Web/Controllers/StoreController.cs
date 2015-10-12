@@ -9,16 +9,15 @@ namespace MusicStore.Web.Controllers
 {
     public class StoreController : Controller
     {
+        // page 55
+
+        MusicStoreEntities storeDB = new MusicStoreEntities();
+
         //
         // GET: /Store/
         public ActionResult Index()
         {
-            var genres = new List<Genre>
-            {
-                new Genre{Name="Disco"},
-                new Genre{Name="Jazz"},
-                new Genre{Name="Rock"}
-            };
+            var genres = storeDB.Genres.ToList();
 
             return View(genres);
         }
@@ -27,7 +26,9 @@ namespace MusicStore.Web.Controllers
         // GET: /Store/Browse?genre=Disco
         public ActionResult Browse(string genre)
         {
-            var genreModel = new Genre { Name = genre };
+            // Retrieve Genre and its Associated Albums from database
+            var genreModel = storeDB.Genres.Include("Albums")
+                .Single(g => g.Name == genre);
 
             return View(genreModel);
         }
@@ -36,7 +37,7 @@ namespace MusicStore.Web.Controllers
         // GET: /Store/Details/5
         public ActionResult Details(int id)
         {
-            var album = new Album { Title = "Album " + id };
+            var album = storeDB.Albums.Find(id);
 
             return View(album);
         }
