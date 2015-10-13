@@ -10,9 +10,10 @@ using MusicStore.Web.Models;
 
 namespace MusicStore.Web.Controllers
 {
+    [Authorize(Roles="Administrator")]
     public class StoreManagerController : Controller
     {
-        // page 82
+        // page 90
 
         private MusicStoreEntities db = new MusicStoreEntities();
 

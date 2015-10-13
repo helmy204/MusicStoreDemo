@@ -1,0 +1,22 @@
+Open the Command Prompt (not as administrator)
+Navigate to the folder where IIS Express is installed on your machine.
+In the command line spin up a IISExpress site with the following prompt: “iisexpress.exe /path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAdminFiles /vpath:”/ASP.NETWebAdminFiles” /port:[port] /clr: 4.0 /ntlm” using the following values for the [param]:
+[port] – any port you have free in IISExpress (I use 8082 in the example below)
+This should launch an IISExpress instance of the Configuration Manager Site<br/>
+
+---------------------------
+
+iisexpress.exe /path:C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAdminFiles /vpath:/ASP.NETWebAdminFiles /port:8882 /clr:4.0 /ntlm
+
+===================================================
+
+Open your browser
+In the URL enter the following “http://localhost:8082/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=[appPath]&applicationUrl=/” substituting the [appPath] with the absolute path to the Visual Studio Project folder with the solution file in it.
+
+---------------------------
+
+http://localhost:8882/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=E:\Work\MusicStoreDemo\MusicStoreDemo\MusicStore\MusicStore.Web&applicationUrl=/
+
+======================================================
+
+Visual Studio Command Prompt > aspnet_regsql.exe
